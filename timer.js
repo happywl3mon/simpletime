@@ -1,6 +1,8 @@
 let timer;
 let timeLeft;
 
+var audio = new Audio('timer.wav');
+
 function startTimer() {
     const minutesInput = document.getElementById('minutes');
     const secondsInput = document.getElementById('seconds');
@@ -42,6 +44,7 @@ function startTimer() {
         if (timeLeft <= 0) {
             clearInterval(timer);
             timerElement.textContent = 'Время истекло!';
+            audio.play();
 
         document.getElementById('minutes').style.visibility = "visible";
         document.getElementById('seconds').style.visibility = "visible";
